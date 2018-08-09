@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container list">
+    <h1 class="title">Posts</h1>
+    <ul>
+        {% for post in articles %}
+        <li>
+            <span>{{ moment(timestamp=post.date).format('MMMM D, YYYY') }}</span><a href="/posts/{{ post.slug }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{{ pagination.links }}
+{% endblock %}

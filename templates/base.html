@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{% if title %}{{ title }}{% else %}Blog title{% endif %}</title>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+        <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+        <link rel="stylesheet" href="{{ url_for('.static', filename='css/style.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('.static', filename='css/custom.css') }}">
+
+        <link rel="icon" type="image/png" href="{{ url_for('.static', filename='images/favicon-32x32.png') }}" sizes="32x32">
+        <link rel="icon" type="image/png" href="{{ url_for('.static', filename='images/favicon-16x16.png') }}" sizes="16x16">
+
+        {{ moment.include_jquery() }}
+        {{ moment.include_moment() }}
+    </head>
+
+    <body>
+        <main class="wrapper">
+            {% include "header.html" %}
+
+            <div class="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+            {% include "footer.html" %}
+        </main>
+    </body>
+</html>

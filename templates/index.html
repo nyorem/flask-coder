@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container centered">
+    <div class="about">
+        <div class="avatar"><img src="{{ url_for('static', filename='images/avatar.jpg') }}" alt="avatar"></div>
+        <h1>Author</h1>
+        <h2>Description</h2>
+        <ul>
+            <li><a href="https://github.com/user">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/user">LinkedIn</a></li>
+        </ul>
+    </div>
+</section>
+{% endblock %}
